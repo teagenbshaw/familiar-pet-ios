@@ -1,0 +1,2 @@
+import SwiftUI
+struct StylePickerView:View{let store:FamiliarStore;var body:some View{List{Section{ForEach(FamiliarStyle.allCases){style in Button{store.select(style)}label:{HStack{VStack(alignment:.leading){Text(style.name).font(.headline);Text(style.world).font(.caption)};Spacer();if store.style==style{Image(systemName:"checkmark.circle.fill").foregroundStyle(style.accent)}}}}}header:{Text("Choose your world")}footer:{Text("The whole realm changes with you: art, atmosphere, dialogue, particles, and cosmetics.")}}.navigationTitle("Style")}}

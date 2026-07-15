@@ -1,0 +1,1 @@
+{"id":"small-dragon","name":"Small dragon","defaultName":"Ember","defaultTraits":["curious","calm"],"animation":{"idle":"idle-bob","sleeping":"sleep-breathe","focused":"focus-still","celebrating":"celebrate-hop","eating":"eat-nibble","interacting":"pet-happy"}}

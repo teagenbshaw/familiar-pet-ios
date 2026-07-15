@@ -1,0 +1,3 @@
+import SwiftUI
+enum AppTab:Hashable{case home,journey,style,settings}
+struct AppView:View{let store:FamiliarStore;@State private var tab:AppTab = .home;var body:some View{TabView(selection:$tab){NavigationStack{HomeView(store:store)}.tabItem{Label("Home",systemImage:"house")}.tag(AppTab.home);NavigationStack{JourneyView(store:store)}.tabItem{Label("Journey",systemImage:"book")}.tag(AppTab.journey);NavigationStack{StylePickerView(store:store)}.tabItem{Label("Style",systemImage:"paintpalette")}.tag(AppTab.style);NavigationStack{SettingsView()}.tabItem{Label("Settings",systemImage:"gear")}.tag(AppTab.settings)}}}

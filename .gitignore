@@ -1,0 +1,34 @@
+# Dependencies and generated web output
+node_modules/
+dist/
+src-tauri/
+
+# TypeScript and Vite generated files
+*.tsbuildinfo
+vite.config.js
+vite.config.d.ts
+
+# Xcode generated project and user state
+ios/*.xcodeproj/
+ios/*.xcworkspace/
+**/xcuserdata/
+**/DerivedData/
+*.xcuserstate
+
+# Apple and Swift build output
+.build/
+build/
+*.ipa
+*.dSYM.zip
+
+# Local environment and editor files
+.DS_Store
+.env
+.env.*
+!.env.example
+.idea/
+.vscode/
+
+# Codex local metadata
+.agents/
+.codex/

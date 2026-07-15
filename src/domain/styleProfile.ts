@@ -1,0 +1,9 @@
+export type FamiliarStyleId='fantasy'|'retro'|'dark-fantasy'|'anime';
+export interface FamiliarStyleProfile{id:FamiliarStyleId;name:string;world:string;dialogueVoice:'storybook'|'arcade'|'gothic'|'anime';rendering:'painted'|'pixel'|'gothic-painted'|'cel-shaded';particle:'motes'|'pixels'|'embers'|'petals';tokens:{background:string;surface:string;text:string;accent:string;secondary:string;ornament:string};cosmeticSet:string}
+export const familiarStyles:Record<FamiliarStyleId,FamiliarStyleProfile>={
+  fantasy:{id:'fantasy',name:'Fantasy',world:'Moonlit Grove',dialogueVoice:'storybook',rendering:'painted',particle:'motes',tokens:{background:'#071f20',surface:'#f3e4c4',text:'#fff5dc',accent:'#e4b863',secondary:'#7bc7bc',ornament:'botanical'},cosmeticSet:'woodland-relics'},
+  retro:{id:'retro',name:'Retro',world:'Verdant Circuit',dialogueVoice:'arcade',rendering:'pixel',particle:'pixels',tokens:{background:'#142d2a',surface:'#d6d89b',text:'#f4f0c2',accent:'#efb85d',secondary:'#75a978',ornament:'pixel-corners'},cosmeticSet:'arcade-treasures'},
+  'dark-fantasy':{id:'dark-fantasy',name:'Dark Fantasy',world:'The Hollow Keep',dialogueVoice:'gothic',rendering:'gothic-painted',particle:'embers',tokens:{background:'#100d1b',surface:'#2a2035',text:'#eee5f2',accent:'#a779d1',secondary:'#8c445d',ornament:'gothic-tracery'},cosmeticSet:'hollow-regalia'},
+  anime:{id:'anime',name:'Anime',world:'Skyflower Valley',dialogueVoice:'anime',rendering:'cel-shaded',particle:'petals',tokens:{background:'#dff1ff',surface:'#fff9f2',text:'#24344f',accent:'#ef8da8',secondary:'#73aee8',ornament:'cloud-ribbon'},cosmeticSet:'sky-festival'}
+};
+export const styleDialogue=(style:FamiliarStyleId)=>({fantasy:'The grove is listening.','retro':'READY! Let’s make this run count.','dark-fantasy':'Even the long night yields to us.',anime:'We’ve got this—together!'}[style]);

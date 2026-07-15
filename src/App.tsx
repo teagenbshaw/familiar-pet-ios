@@ -1,0 +1,1 @@
+import{useEffect}from'react';import{IOSApp}from'./components/IOSApp';import{useFamiliarStore}from'./store/useFamiliarStore';export function App(){const tick=useFamiliarStore(s=>s.tick);useEffect(()=>{const id=setInterval(tick,1000);return()=>clearInterval(id)},[tick]);return <IOSApp/>}

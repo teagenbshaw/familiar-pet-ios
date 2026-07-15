@@ -1,0 +1,2 @@
+import Observation
+@MainActor @Observable final class FamiliarStore{var petName="Ember";var level=4;var mood="Calm";var bond=0.68;var energy=0.72;var style:FamiliarStyle = .fantasy;func select(_ style:FamiliarStyle){self.style=style;publishWidgetSnapshot()};func publishWidgetSnapshot(){let previous=SharedPetStore().load();SharedPetStore().save(WidgetSnapshot(petName:petName,level:level,mood:mood,bond:bond,energy:energy,style:style,pose:previous.pose,focusEndDate:previous.focusEndDate,focusMinutesToday:previous.focusMinutesToday,lastInteraction:previous.lastInteraction))}}

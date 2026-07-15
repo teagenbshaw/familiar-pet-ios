@@ -1,0 +1,3 @@
+import {useRef} from 'react';
+import {useFamiliarStore} from '../store/useFamiliarStore';
+export function Dragon({large=false}:{large?:boolean}){const {data,petState,react}=useFamiliarStore(),start=useRef<{x:number;y:number}|null>(null);return <button className={`dragon ${petState} ${large?'large':''}`} style={{'--pet-scale':large?1:data.settings.size} as React.CSSProperties} aria-label={`Pet ${data.pet.name}`} onClick={react} onPointerDown={e=>{start.current={x:e.clientX,y:e.clientY}}} onPointerUp={e=>{if(start.current&&Math.hypot(e.clientX-start.current.x,e.clientY-start.current.y)>28)react();start.current=null}}><img src="/assets/ember.png" alt={`${data.pet.name}, a small orange dragon`}/><span className="dragon-shadow"/></button>}

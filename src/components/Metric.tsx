@@ -1,0 +1,1 @@
+export function Metric({label,value,color='sage'}:{label:string;value:number;color?:string}){return <div className="metric"><div><span>{label}</span><strong>{value}%</strong></div><div className="meter"><i className={color} style={{width:`${value}%`}}/></div></div>}
