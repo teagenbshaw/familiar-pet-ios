@@ -42,7 +42,9 @@ struct FamiliarWidgetView: View {
         }.containerBackground(for: .widget) { background }
     }
 
-    private var background: some View { entry.snapshot.style.background.gradient }
+    private var background: some View {
+        Rectangle().fill(entry.snapshot.style.background.gradient)
+    }
     private var status: some View {
         VStack(alignment: .leading, spacing: 6) {
             Text(entry.snapshot.mood).font(.subheadline.bold())
